@@ -20,7 +20,7 @@ const Signup = ({ onSignup, onSwitchToLogin }) => {
       const data = await response.json();
 
       if (response.ok) {
-        onSignup(username, password); // Auto-fill login or auto-login
+        onSignup(username, password, role); // Auto-fill login or auto-login
       } else {
         setError(data.error || "Registration failed");
       }

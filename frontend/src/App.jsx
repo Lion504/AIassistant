@@ -55,8 +55,8 @@ function App() {
     return (
       <div className="app-container" style={{ justifyContent: "center" }}>
         <Signup
-          onSignup={(u) =>
-            handleLogin({ token: "temp", role: "student", username: u })
+          onSignup={(u, p, r) =>
+            handleLogin({ token: "temp", role: r, username: u })
           } // Ideally auto-login via API
           onSwitchToLogin={() => setActiveTab("login")}
         />

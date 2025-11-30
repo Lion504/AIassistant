@@ -6,7 +6,7 @@
   },
   {
     "username": "testteacher",
-    "password": "scrypt:32768:8:1$dvw1BqOPolXuozWh$fe4974293e7de0517a49e78aa23f0ffa2a6a6187a8228c9f76df7411d9978dfc5f425310adc81ec70d9857555527cb8ab28f4bb83c83b2c68b70185f41605a16",
+    "password": "scrypt:32768:8:1$slAV1eKXpjey0dwC$ec8dff36df1d9d8b21da3bac3e6ea41a297d1889f2313220f9cad9c9459d3816643b8f8aed617cfaf1973690fad71058d2ad976c6c9a811d414a6f3b9454c454",
     "role": "teacher"
   }
 ]
