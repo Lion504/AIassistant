@@ -20,10 +20,8 @@ const Dashboard = ({ onNavigate }) => {
             </h3>
           </div>
           <div className="study-info-row">
-            <span>
-              <strong>Yongzhi Wang</strong>
-            </span>
-            <span>2412119</span>
+            <strong>Test Student</strong>
+            <span>1234567</span>
           </div>
           <div className="study-info-row">
             <span>Degree Programme in IT</span>
