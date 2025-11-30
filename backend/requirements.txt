@@ -8,3 +8,5 @@ google-generativeai
 duckduckgo-search
 pyjwt
 werkzeug
+pylint
+black
