@@ -12,6 +12,7 @@ This is a smart, bilingual AI assistant designed for Metropolia University stude
 - **📢 Announcement translate and summary**: ananlysis announcements from university and translate and summrize them for you.
 - **🎓 Elective Recommendations**: Suggests elective courses based on your studies or interests.
 - **📊 Teacher Dashboard**: Interactive insights graph showing trending student questions.
+- **🔐 Secure Authentication**: Create your own account with secure login and session management.
 - **🌍 Bilingual Support**: Automatically detects language and translates content (e.g., translates Finnish lunch menus to English).
 ## 🛠️ Tech Stack
 - **Frontend**: React, Vite, Recharts, React Markdown
@@ -45,6 +46,26 @@ Launch both the Backend and Frontend servers with one command:
 ```
 - **Frontend**: http://localhost:5173
 - **Backend**: http://localhost:5000
+### 3. Authentication
+The app uses a secure login system.
+1.  Click **"Sign Up"** on the login screen.
+2.  Create a username and password.
+3.  You will be automatically logged in!
+
+## 🧪 Code Quality
+We use `pylint`, `black`, `eslint`, and `prettier` to keep code clean.
+
+### Run Checks
+Before committing, run this script to check for errors:
+```powershell
+./check.ps1
+```
+
+### Auto-Format
+To automatically fix formatting issues:
+```powershell
+./format.ps1
+```
 
 ## 📂 Project Structure
 - `backend/`: Flask server, AI logic, and JSON data.
