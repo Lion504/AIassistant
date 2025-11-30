@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Cloud Computing Platforms",
+    "tags": ["Cloud", "AWS", "Azure", "DevOps"],
+    "description": "Hands-on experience with major cloud platforms, focusing on deployment, scaling, and serverless architectures.",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80"
+  },
+  {
+    "name": "Cyber Security Fundamentals",
+    "tags": ["Security", "Network", "IT"],
+    "description": "Introduction to information security, threat analysis, and basic defense mechanisms.",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80"
+  },
+  {
+    "name": "Mobile Application Development (Android)",
+    "tags": ["Mobile", "Android", "Kotlin", "Java"],
+    "description": "Building native Android applications using Kotlin and modern Android Jetpack components.",
+    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80"
+  },
+  {
+    "name": "Cross-Platform Mobile Dev (Flutter)",
+    "tags": ["Mobile", "Flutter", "Dart", "Frontend"],
+    "description": "Create beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.",
+    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80"
+  },
+  {
+    "name": "Game Design & Unity",
+    "tags": ["Game Dev", "Unity", "C#", "Design"],
+    "description": "Learn the principles of game design and develop 2D/3D games using the Unity engine.",
+    "image": "https://images.unsplash.com/photo-1556438064-2d7646166914?w=600&q=80"
+  },
+  {
+    "name": "Internet of Things (IoT) Basics",
+    "tags": ["IoT", "Embedded", "Hardware", "Python"],
+    "description": "Connecting physical devices to the internet, sensor data collection, and microcontroller programming.",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+  },
+  {
+    "name": "Data Analysis with Python",
+    "tags": ["Data Science", "Python", "Analytics", "AI"],
+    "description": "Analyzing and visualizing data using Pandas, NumPy, and Matplotlib.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"
+  },
+  {
+    "name": "User Interface (UI) Design",
+    "tags": ["Design", "UI", "Figma", "Creative"],
+    "description": "Principles of visual design, typography, and color theory for digital interfaces.",
+    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80"
+  },
+  {
+    "name": "User Experience (UX) Research",
+    "tags": ["Design", "UX", "Research", "Psychology"],
+    "description": "Understanding user needs through research methods, usability testing, and prototyping.",
+    "image": "https://images.unsplash.com/photo-1586717791821-3f44a5638d0f?w=600&q=80"
+  },
+  {
+    "name": "Full Stack Web Development",
+    "tags": ["Web Dev", "Full Stack", "Node.js", "React"],
+    "description": "Building complete web applications with a modern stack (MERN/PERN).",
+    "image": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80"
+  },
+  {
+    "name": "Finnish for Exchange Students 1",
+    "tags": ["Language", "Finnish", "Culture"],
+    "description": "Survival Finnish for everyday situations and introduction to Finnish culture.",
+    "image": "https://images.unsplash.com/photo-1528164344705-47542687000d?w=600&q=80"
+  },
+  {
+    "name": "Professional English Communication",
+    "tags": ["Language", "English", "Business", "Communication"],
+    "description": "Improving professional writing and presentation skills in English.",
+    "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80"
+  },
+  {
+    "name": "Project Management Basics",
+    "tags": ["Business", "Management", "Agile", "Scrum"],
+    "description": "Introduction to project management methodologies, including Agile and Scrum.",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80"
+  },
+  {
+    "name": "Digital Marketing & SEO",
+    "tags": ["Marketing", "Business", "SEO", "Social Media"],
+    "description": "Strategies for online visibility, content marketing, and search engine optimization.",
+    "image": "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&q=80"
+  },
+  {
+    "name": "3D Modeling with Blender",
+    "tags": ["Design", "3D", "Art", "Creative"],
+    "description": "Creating 3D models, texturing, and rendering using Blender.",
+    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80"
+  },
+  {
+    "name": "Ethical Hacking",
+    "tags": ["Security", "Hacking", "PenTesting"],
+    "description": "Learning offensive security techniques to better understand how to defend systems.",
+    "image": "https://images.unsplash.com/photo-1563206767-5b1d97299337?w=600&q=80"
+  },
+  {
+    "name": "Machine Learning Fundamentals",
+    "tags": ["AI", "ML", "Python", "Data Science"],
+    "description": "Understanding core ML algorithms and implementing them using Scikit-learn.",
+    "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=80"
+  },
+  {
+    "name": "DevOps & CI/CD",
+    "tags": ["DevOps", "Cloud", "Automation", "Docker"],
+    "description": "Automating software delivery pipelines using Docker, Jenkins, and GitHub Actions.",
+    "image": "https://images.unsplash.com/photo-1667372393119-c85c02088947?w=600&q=80"
+  },
+  {
+    "name": "Virtual Reality (VR) Development",
+    "tags": ["VR", "XR", "Unity", "Immersive"],
+    "description": "Creating immersive virtual reality experiences and applications.",
+    "image": "https://images.unsplash.com/photo-1592478411213-61535fdd861d?w=600&q=80"
+  },
+  {
+    "name": "Sustainable Development in Tech",
+    "tags": ["Sustainability", "Green IT", "Ethics"],
+    "description": "Exploring the environmental impact of technology and sustainable design practices.",
+    "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb7d5fa5?w=600&q=80"
+  }
+]

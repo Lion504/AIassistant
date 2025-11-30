@@ -1,0 +1,254 @@
+[
+  {
+    "task": "Find workspace",
+    "url": "https://oma.metropolia.fi/en/workspaces",
+    "description": "Search for available workspaces and meeting rooms.",
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80"
+  },
+  {
+    "task": "Check assignments",
+    "url": "https://oma.metropolia.fi/en/assignments",
+    "description": "View your upcoming and past assignments.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Lunch menus",
+    "url": "https://oma.metropolia.fi/en/lunch",
+    "description": "See lunch menus for student cafeterias.",
+    "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80"
+  },
+  {
+    "task": "IT Services",
+    "url": "https://oma.metropolia.fi/en/it-services",
+    "description": "Get help with IT issues, passwords, and software.",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+  },
+  {
+    "task": "Student Health",
+    "url": "https://oma.metropolia.fi/en/student-health",
+    "description": "Contact student health services.",
+    "image": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80"
+  },
+  {
+    "task": "Tuudo",
+    "url": "https://www.tuudo.fi/",
+    "description": "Download the Tuudo app for schedule and student card.",
+    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 1",
+    "url": "https://oma.metropolia.fi/en/course/AP1",
+    "description": "Workspace for Advanced Programming module 1. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 2",
+    "url": "https://oma.metropolia.fi/en/course/AP2",
+    "description": "Workspace for Advanced Programming module 2. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 3",
+    "url": "https://oma.metropolia.fi/en/course/AP3",
+    "description": "Workspace for Advanced Programming module 3. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 4",
+    "url": "https://oma.metropolia.fi/en/course/AP4",
+    "description": "Workspace for Advanced Programming module 4. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 5",
+    "url": "https://oma.metropolia.fi/en/course/AP5",
+    "description": "Workspace for Advanced Programming module 5. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 6",
+    "url": "https://oma.metropolia.fi/en/course/AP6",
+    "description": "Workspace for Advanced Programming module 6. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 7",
+    "url": "https://oma.metropolia.fi/en/course/AP7",
+    "description": "Workspace for Advanced Programming module 7. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 8",
+    "url": "https://oma.metropolia.fi/en/course/AP8",
+    "description": "Workspace for Advanced Programming module 8. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 9",
+    "url": "https://oma.metropolia.fi/en/course/AP9",
+    "description": "Workspace for Advanced Programming module 9. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 10",
+    "url": "https://oma.metropolia.fi/en/course/AP10",
+    "description": "Workspace for Advanced Programming module 10. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 11",
+    "url": "https://oma.metropolia.fi/en/course/AP11",
+    "description": "Workspace for Advanced Programming module 11. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 12",
+    "url": "https://oma.metropolia.fi/en/course/AP12",
+    "description": "Workspace for Advanced Programming module 12. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 13",
+    "url": "https://oma.metropolia.fi/en/course/AP13",
+    "description": "Workspace for Advanced Programming module 13. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 14",
+    "url": "https://oma.metropolia.fi/en/course/AP14",
+    "description": "Workspace for Advanced Programming module 14. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 15",
+    "url": "https://oma.metropolia.fi/en/course/AP15",
+    "description": "Workspace for Advanced Programming module 15. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 16",
+    "url": "https://oma.metropolia.fi/en/course/AP16",
+    "description": "Workspace for Advanced Programming module 16. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 17",
+    "url": "https://oma.metropolia.fi/en/course/AP17",
+    "description": "Workspace for Advanced Programming module 17. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 18",
+    "url": "https://oma.metropolia.fi/en/course/AP18",
+    "description": "Workspace for Advanced Programming module 18. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 19",
+    "url": "https://oma.metropolia.fi/en/course/AP19",
+    "description": "Workspace for Advanced Programming module 19. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 20",
+    "url": "https://oma.metropolia.fi/en/course/AP20",
+    "description": "Workspace for Advanced Programming module 20. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 21",
+    "url": "https://oma.metropolia.fi/en/course/AP21",
+    "description": "Workspace for Advanced Programming module 21. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 22",
+    "url": "https://oma.metropolia.fi/en/course/AP22",
+    "description": "Workspace for Advanced Programming module 22. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 23",
+    "url": "https://oma.metropolia.fi/en/course/AP23",
+    "description": "Workspace for Advanced Programming module 23. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 24",
+    "url": "https://oma.metropolia.fi/en/course/AP24",
+    "description": "Workspace for Advanced Programming module 24. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 25",
+    "url": "https://oma.metropolia.fi/en/course/AP25",
+    "description": "Workspace for Advanced Programming module 25. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 26",
+    "url": "https://oma.metropolia.fi/en/course/AP26",
+    "description": "Workspace for Advanced Programming module 26. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 27",
+    "url": "https://oma.metropolia.fi/en/course/AP27",
+    "description": "Workspace for Advanced Programming module 27. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 28",
+    "url": "https://oma.metropolia.fi/en/course/AP28",
+    "description": "Workspace for Advanced Programming module 28. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 29",
+    "url": "https://oma.metropolia.fi/en/course/AP29",
+    "description": "Workspace for Advanced Programming module 29. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Course: Advanced Programming 30",
+    "url": "https://oma.metropolia.fi/en/course/AP30",
+    "description": "Workspace for Advanced Programming module 30. Materials and submissions.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+  },
+  {
+    "task": "Library Info",
+    "url": "https://oma.metropolia.fi/en/library",
+    "description": "Information and contacts for Metropolia Library.",
+    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80"
+  },
+  {
+    "task": "Sports Info",
+    "url": "https://oma.metropolia.fi/en/sports",
+    "description": "Information and contacts for Metropolia Sports.",
+    "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80"
+  },
+  {
+    "task": "Housing Info",
+    "url": "https://oma.metropolia.fi/en/housing",
+    "description": "Information and contacts for Metropolia Housing.",
+    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80"
+  },
+  {
+    "task": "Career Services Info",
+    "url": "https://oma.metropolia.fi/en/career-services",
+    "description": "Information and contacts for Metropolia Career Services.",
+    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80"
+  },
+  {
+    "task": "International Office Info",
+    "url": "https://oma.metropolia.fi/en/international-office",
+    "description": "Information and contacts for Metropolia International Office.",
+    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80"
+  },
+  {
+    "task": "Student Union Info",
+    "url": "https://oma.metropolia.fi/en/student-union",
+    "description": "Information and contacts for Metropolia Student Union.",
+    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80"
+  }
+]

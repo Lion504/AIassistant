@@ -1,0 +1,34 @@
+[
+  {
+    "student_name": "Alice",
+    "course": "Advanced Programming 1",
+    "title": "React Component Structure",
+    "due_date": "2025-11-15",
+    "status": "Submitted",
+    "link": "https://oma.metropolia.fi/assignments/123"
+  },
+  {
+    "student_name": "Alice",
+    "course": "Data Structures",
+    "title": "Binary Tree Implementation",
+    "due_date": "2025-11-20",
+    "status": "Pending",
+    "link": "https://oma.metropolia.fi/assignments/124"
+  },
+  {
+    "student_name": "Alice",
+    "course": "UX Design",
+    "title": "User Persona Creation",
+    "due_date": "2025-11-25",
+    "status": "Pending",
+    "link": "https://oma.metropolia.fi/assignments/125"
+  },
+  {
+    "student_name": "Bob",
+    "course": "Network Security",
+    "title": "Firewall Configuration",
+    "due_date": "2025-11-18",
+    "status": "Submitted",
+    "link": "https://oma.metropolia.fi/assignments/126"
+  }
+]

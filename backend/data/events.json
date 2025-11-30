@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Tech Career Fair 2025",
+    "date": "2025-12-10",
+    "location": "Main Hall, Myyrmäki Campus",
+    "description": "Meet top tech companies and find your next internship or job.",
+    "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80",
+    "link": "https://metropolia.fi/career-fair"
+  },
+  {
+    "title": "Winter Coding Hackathon",
+    "date": "2025-12-15",
+    "location": "Innovation Hub, Karamalmi",
+    "description": "48-hour coding challenge. Win prizes and network with peers.",
+    "image": "https://images.unsplash.com/photo-1504384308090-c54be3855833?w=600&q=80",
+    "link": "https://metropolia.fi/hackathon"
+  },
+  {
+    "title": "Christmas Jazz Concert",
+    "date": "2025-12-20",
+    "location": "Arabia Campus",
+    "description": "Enjoy festive jazz music performed by Metropolia music students.",
+    "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&q=80",
+    "link": "https://metropolia.fi/concert"
+  }
+]
