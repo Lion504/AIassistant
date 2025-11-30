@@ -1,8 +1,31 @@
-import React, { useState } from "react";
-import announcementsData from "../../../backend/data/announcements.json";
+import React, { useState, useEffect } from "react";
+
 
 const Dashboard = ({ onNavigate }) => {
-  const [announcements] = useState(announcementsData.slice(0, 3));
+  const [student, setStudent] = useState(null);
+  const [announcements, setAnnouncements] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/dashboard');
+        const data = await response.json();
+        setStudent(data.student);
+        setAnnouncements(data.announcements);
+      } catch (error) {
+        console.error("Failed to fetch dashboard data", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
+
+  if (loading) {
+    return <div style={{ padding: '20px', color: 'white' }}>Loading dashboard...</div>;
+  }
 
   return (
     <div className="dashboard-grid">
@@ -20,23 +43,21 @@ const Dashboard = ({ onNavigate }) => {
             </h3>
           </div>
           <div className="study-info-row">
-            <strong>Test Student</strong>
-            <span>1234567</span>
+            <span><strong>{student?.name || "Student"}</strong></span>
+            <span>{student?.student_id || ""}</span>
           </div>
           <div className="study-info-row">
-            <span>Degree Programme in IT</span>
-            <span style={{ color: "#4ade80" }}>ATTENDING AUTUMN 2025</span>
+            <span>{student?.program || "Degree Programme"}</span>
+            <span style={{ color: '#4ade80' }}>{student?.status || "ATTENDING"}</span>
           </div>
-
+          
           <div className="study-progress">
-            <div className="progress-circle" style={{ borderColor: "#3b82f6" }}>
-              91
+            <div className="progress-circle" style={{ borderColor: '#3b82f6' }}>
+              {student?.credits || 0}
             </div>
             <div>
-              <div style={{ fontSize: "1.2rem", fontWeight: "bold" }}>
-                91 cr
-              </div>
-              <div style={{ color: "var(--text-muted)" }}>(240 cr)</div>
+              <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{student?.credits || 0} cr</div>
+              <div style={{ color: 'var(--text-muted)' }}>({student?.total_credits || 240} cr)</div>
             </div>
           </div>
         </div>
@@ -56,36 +77,13 @@ const Dashboard = ({ onNavigate }) => {
           />
 
           <div className="workspace-list">
-            {[
-              { title: "Ethical Hacking", code: "TX00EY35-3011" },
-              { title: "Navigating Finnish Work Life", code: "XX00GL67-3001" },
-              { title: "Probability and Statistics", code: "TT00ES94-3046" },
-              { title: "Suomi 3 (A2.1-A2.2)", code: "XX00EL30-3035" },
-              { title: "Web Development", code: "TX00EY23-3011" },
-            ].map((ws, i) => (
-              <div
-                key={i}
-                style={{
-                  padding: "10px 0",
-                  borderBottom: "1px solid var(--glass-border)",
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              >
+            {(student?.workspaces || []).map((ws, i) => (
+              <div key={i} style={{ padding: '10px 0', borderBottom: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between' }}>
                 <div>
-                  <div style={{ fontWeight: "500", color: "#60a5fa" }}>
-                    {ws.title}
-                  </div>
-                  <div
-                    style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}
-                  >
-                    {ws.code}
-                  </div>
+                  <div style={{ fontWeight: '500', color: '#60a5fa' }}>{ws.title}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{ws.code}</div>
                 </div>
-                <i
-                  className="fa fa-bars"
-                  style={{ color: "var(--text-muted)" }}
-                ></i>
+                <i className="fa fa-bars" style={{ color: 'var(--text-muted)' }}></i>
               </div>
             ))}
           </div>

@@ -1,3 +1,5 @@
+import json
+import os
 from flask import Blueprint, request, jsonify
 from services.search_service import find_best_task, find_electives
 from services.llm_service import (
@@ -73,3 +75,27 @@ def electives():
     explanation = recommend_electives(interests, recommendations)
 
     return jsonify({"explanation": explanation, "courses": recommendations})
+
+
+@api.route("/dashboard", methods=["GET"])
+def dashboard():
+    # Load student data
+    student_file = os.path.join(os.path.dirname(__file__), "data", "student.json")
+    try:
+        with open(student_file, "r", encoding="utf-8") as f:
+            student_data = json.load(f)
+    except FileNotFoundError:
+        student_data = {}
+
+    # Load announcements
+    announcements_file = os.path.join(os.path.dirname(__file__), "data", "announcements.json")
+    try:
+        with open(announcements_file, "r", encoding="utf-8") as f:
+            announcements = json.load(f)
+    except FileNotFoundError:
+        announcements = []
+
+    return jsonify({
+        "student": student_data,
+        "announcements": announcements[:3] # Return top 3
+    })

@@ -1,0 +1,15 @@
+{
+  "name": "Test Student",
+  "student_id": "1234567",
+  "program": "Degree Programme in IT",
+  "status": "ATTENDING AUTUMN 2025",
+  "credits": 91,
+  "total_credits": 240,
+  "workspaces": [
+    { "title": "Ethical Hacking", "code": "TX00EY35-3011" },
+    { "title": "Navigating Finnish Work Life", "code": "XX00GL67-3001" },
+    { "title": "Probability and Statistics", "code": "TT00ES94-3046" },
+    { "title": "Suomi 3 (A2.1-A2.2)", "code": "XX00EL30-3035" },
+    { "title": "Web Development", "code": "TX00EY23-3011" }
+  ]
+}
