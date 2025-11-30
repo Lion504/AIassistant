@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const OMAHeader = () => {
   return (
@@ -6,7 +6,11 @@ const OMAHeader = () => {
       <div className="header-inner">
         <div className="logo-container">
           <a href="/" className="logo">
-            <img src="https://oma.metropolia.fi/metropolia-theme/images/metropolia/logo.png" alt="Metropolia" style={{height: '40px'}} />
+            <img
+              src="https://oma.metropolia.fi/metropolia-theme/images/metropolia/logo.png"
+              alt="Metropolia"
+              style={{ height: "40px" }}
+            />
           </a>
         </div>
         <div className="user-profile">

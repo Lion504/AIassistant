@@ -4,30 +4,35 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 from duckduckgo_search import DDGS
 
-load_dotenv(os.path.join(os.path.dirname(__file__), '../.env'))
+load_dotenv(os.path.join(os.path.dirname(__file__), "../.env"))
 
 api_key = os.getenv("GEMINI_API_KEY")
 if api_key and api_key != "YOUR_API_KEY_HERE":
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-flash-latest')
+    model = genai.GenerativeModel("gemini-flash-latest")
 else:
     model = None
+
 
 # Load all data files
 def load_json_data(filename):
     try:
-        with open(os.path.join(os.path.dirname(__file__), f'../data/{filename}'), 'r') as f:
+        with open(
+            os.path.join(os.path.dirname(__file__), f"../data/{filename}"), "r"
+        ) as f:
             return json.load(f)
     except Exception as e:
         print(f"Error loading {filename}: {e}")
         return []
 
-assignments_data = load_json_data('assignments.json')
-lunch_data = load_json_data('lunch.json')
-electives_data = load_json_data('electives.json')
-teachers_data = load_json_data('teachers.json')
-events_data = load_json_data('events.json')
-locations_data = load_json_data('locations.json')
+
+assignments_data = load_json_data("assignments.json")
+lunch_data = load_json_data("lunch.json")
+electives_data = load_json_data("electives.json")
+teachers_data = load_json_data("teachers.json")
+events_data = load_json_data("events.json")
+locations_data = load_json_data("locations.json")
+
 
 def search_internet(query):
     """
@@ -37,14 +42,15 @@ def search_internet(query):
     try:
         results = DDGS().text(keywords=query, max_results=3)
         context = "\n".join([f"- {r['title']}: {r['body']}" for r in results])
-        
+
         images = DDGS().images(keywords=query, max_results=1)
-        image_url = images[0]['image'] if images else None
-        
+        image_url = images[0]["image"] if images else None
+
         return {"context": context, "image": image_url, "source": "Internet Search"}
     except Exception as e:
         print(f"Internet Search Error: {e}")
         return {"context": "", "image": None, "source": "Error"}
+
 
 def get_embedding(text):
     """
@@ -54,14 +60,13 @@ def get_embedding(text):
         return None
     try:
         result = genai.embed_content(
-            model="models/text-embedding-004",
-            content=text,
-            task_type="retrieval_query"
+            model="models/text-embedding-004", content=text, task_type="retrieval_query"
         )
-        return result['embedding']
+        return result["embedding"]
     except Exception as e:
         print(f"Embedding Error: {e}")
         return None
+
 
 def generate_navigation_response(user_query, best_task):
     """
@@ -73,38 +78,55 @@ def generate_navigation_response(user_query, best_task):
     # 1. Detect Intent & Inject Data
     context_data = ""
     query_lower = user_query.lower()
-    
+
     # Assignments
-    if any(k in query_lower for k in ["assignment", "homework", "task", "tehtävä", "läksy"]):
+    if any(
+        k in query_lower for k in ["assignment", "homework", "task", "tehtävä", "läksy"]
+    ):
         # Simple name detection (mock)
-        student_name = "Alice" # Default for demo
-        if "bob" in query_lower: student_name = "Bob"
-        
-        user_assignments = [a for a in assignments_data if a.get('student_name', '').lower() == student_name.lower()]
-        context_data = f"User's Assignments ({student_name}): {json.dumps(user_assignments)}"
+        student_name = "Alice"  # Default for demo
+        if "bob" in query_lower:
+            student_name = "Bob"
+
+        user_assignments = [
+            a
+            for a in assignments_data
+            if a.get("student_name", "").lower() == student_name.lower()
+        ]
+        context_data = (
+            f"User's Assignments ({student_name}): {json.dumps(user_assignments)}"
+        )
 
     # Lunch
-    elif any(k in query_lower for k in ["lunch", "food", "menu", "ruoka", "lounas", "syödä"]):
+    elif any(
+        k in query_lower for k in ["lunch", "food", "menu", "ruoka", "lounas", "syödä"]
+    ):
         import datetime
-        today = datetime.datetime.now().strftime('%A')
-        
+
+        today = datetime.datetime.now().strftime("%A")
+
         # Check if user specifically asked for "today"
         if "today" in query_lower or "tänään" in query_lower:
-             todays_menu = [day for day in lunch_data if day['day'] == today]
-             if todays_menu:
-                 context_data = f"Lunch Menu for Today ({today}): {json.dumps(todays_menu)}"
-             else:
-                 context_data = f"There is no lunch menu available for today ({today}). The cafeteria might be closed."
+            todays_menu = [day for day in lunch_data if day["day"] == today]
+            if todays_menu:
+                context_data = (
+                    f"Lunch Menu for Today ({today}): {json.dumps(todays_menu)}"
+                )
+            else:
+                context_data = f"There is no lunch menu available for today ({today}). The cafeteria might be closed."
         else:
-             # Show all if no specific day requested
-             context_data = f"Lunch Menus: {json.dumps(lunch_data)}"
+            # Show all if no specific day requested
+            context_data = f"Lunch Menus: {json.dumps(lunch_data)}"
 
     # Events
     elif any(k in query_lower for k in ["event", "happening", "tapahtuma"]):
         context_data = f"Upcoming Events: {json.dumps(events_data)}"
 
     # Locations
-    elif any(k in query_lower for k in ["where is", "location", "map", "missä", "sijainti", "kartta"]):
+    elif any(
+        k in query_lower
+        for k in ["where is", "location", "map", "missä", "sijainti", "kartta"]
+    ):
         context_data = f"Campus Locations: {json.dumps(locations_data)}"
 
     # Teachers
@@ -164,7 +186,7 @@ def generate_navigation_response(user_query, best_task):
         # Check if we need to fallback to internet search
         if "don't know" in response_text.lower() or "en tiedä" in response_text.lower():
             internet_result = search_internet(user_query)
-            if internet_result['context']:
+            if internet_result["context"]:
                 # Re-generate answer with internet context
                 prompt_internet = f"""
                 User Query: {user_query}
@@ -176,8 +198,8 @@ def generate_navigation_response(user_query, best_task):
                 response_internet = model.generate_content(prompt_internet)
                 return {
                     "answer": response_internet.text,
-                    "image": internet_result['image'],
-                    "source": "Internet Search"
+                    "image": internet_result["image"],
+                    "source": "Internet Search",
                 }
 
         # Extract image from context if available (for the main UI image)
@@ -190,31 +212,34 @@ def generate_navigation_response(user_query, best_task):
                 if isinstance(data_list, list) and len(data_list) > 0:
                     # Prefer image from the first item
                     if isinstance(data_list[0], dict):
-                        image_url = data_list[0].get('image')
+                        image_url = data_list[0].get("image")
                     # Or from 'menu' items if it's lunch data
-                    if 'menu' in data_list[0] and isinstance(data_list[0]['menu'], list):
-                         image_url = data_list[0]['menu'][0].get('image')
+                    if "menu" in data_list[0] and isinstance(
+                        data_list[0]["menu"], list
+                    ):
+                        image_url = data_list[0]["menu"][0].get("image")
         except:
             pass
 
         return {
             "answer": response_text,
-            "image": image_url, 
-            "link": best_task.get('url') if best_task else None
+            "image": image_url,
+            "link": best_task.get("url") if best_task else None,
         }
     except Exception as e:
         print(f"Gemini Error: {e}")
-        return {"answer": "Sorry, I'm having trouble thinking right now.", "image": None}
+        return {
+            "answer": "Sorry, I'm having trouble thinking right now.",
+            "image": None,
+        }
+
 
 def explain_announcement(text, language="en"):
     """
     Explains an announcement using Gemini.
     """
     if not model:
-        return {
-            "summary": "AI not configured.",
-            "key_points": []
-        }
+        return {"summary": "AI not configured.", "key_points": []}
 
     prompt = f"""
     Analyze the following announcement text for a student:
@@ -227,7 +252,7 @@ def explain_announcement(text, language="en"):
     
     Output format: JSON with keys "summary" and "key_points" (list of strings).
     """
-    
+
     try:
         response = model.generate_content(prompt)
         text = response.text.strip()
@@ -240,6 +265,7 @@ def explain_announcement(text, language="en"):
         print(f"Gemini Error: {e}")
         return {"summary": "Error analyzing text.", "key_points": []}
 
+
 def recommend_electives(interests, recommended_courses):
     """
     Generates a recommendation explanation using Gemini.
@@ -247,8 +273,10 @@ def recommend_electives(interests, recommended_courses):
     if not model:
         return "AI not configured."
 
-    courses_text = "\n".join([f"- {c['name']}: {c['description']}" for c in recommended_courses])
-    
+    courses_text = "\n".join(
+        [f"- {c['name']}: {c['description']}" for c in recommended_courses]
+    )
+
     prompt = f"""
     User Interests: {interests}
     Recommended Courses:
@@ -257,7 +285,7 @@ def recommend_electives(interests, recommended_courses):
     Write a short, encouraging paragraph explaining why these courses are a good fit for the user.
     IMPORTANT: Answer in the same language as the user's interests input.
     """
-    
+
     try:
         response = model.generate_content(prompt)
         return response.text.strip()
