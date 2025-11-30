@@ -102,7 +102,7 @@ const Dashboard = ({ onNavigate }) => {
         </div>
 
         {/* Announcements */}
-        <div className="widget-card">
+        <div className="glass-card">
           <div className="widget-header">
             <h3>
               <i className="fa fa-bullhorn"></i> Announcements
@@ -159,7 +159,7 @@ const Dashboard = ({ onNavigate }) => {
       {/* Column 3: Shortcuts & Feedback */}
       <div className="dashboard-column">
         {/* Shortcuts */}
-        <div className="widget-card">
+        <div className="glass-card">
           <div className="widget-header">
             <h3>
               <i className="fa fa-external-link"></i> Shortcuts

@@ -96,14 +96,6 @@ function App() {
         <button
           className={activeTab === "home" ? "active" : ""}
           onClick={() => setActiveTab("home")}
-          style={
-            activeTab === "home" && userRole === "teacher"
-              ? {
-                  background: "#10b981",
-                  boxShadow: "0 4px 12px rgba(16, 185, 129, 0.3)",
-                }
-              : {}
-          }
         >
           <i className="fa fa-home" style={{ marginRight: "5px" }}></i> Home
         </button>
@@ -114,15 +106,6 @@ function App() {
               : ""
           }
           onClick={() => setActiveTab("navigator")}
-          style={
-            ["navigator", "explainer", "electives"].includes(activeTab) &&
-            userRole === "teacher"
-              ? {
-                  background: "#10b981",
-                  boxShadow: "0 4px 12px rgba(16, 185, 129, 0.3)",
-                }
-              : {}
-          }
         >
           <i className="fa fa-magic" style={{ marginRight: "5px" }}></i> AI
           Assistant

@@ -29,28 +29,29 @@ export default function Navigator() {
   };
 
   return (
-    <div className="card">
+    <div className="glass-card">
       <h2>Where do I find...?</h2>
-      <p style={{ color: "var(--text-dim)", marginBottom: "1rem" }}>
+      <p style={{ color: "var(--text-muted)", marginBottom: "1.5rem" }}>
         Ask about workspaces, assignments, lunch, or IT services.
       </p>
 
       <form onSubmit={handleSearch}>
-        <div className="input-group">
+        <div className="input-group" style={{ display: 'flex', gap: '10px' }}>
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="e.g., Where can I find internship assignments?"
+            style={{ flex: 1 }}
           />
-          <button type="submit" className="action-btn" disabled={loading}>
+          <button type="submit" className="action-btn" disabled={loading} style={{ width: 'auto' }}>
             {loading ? "Asking..." : "Ask"}
           </button>
         </div>
       </form>
 
       {result && (
-        <div className="response-area">
+        <div className="response-area" style={{ marginTop: '20px' }}>
           <div
             className="response-content"
             style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
@@ -73,15 +74,13 @@ export default function Navigator() {
                       {items.map((item, idx) => (
                         <div
                           key={idx}
-                          className="info-card"
+                          className="glass-panel"
                           style={{
                             display: "flex",
                             alignItems: "center",
                             gap: "20px",
-                            background: "rgba(255,255,255,0.05)",
                             padding: "15px",
                             borderRadius: "12px",
-                            border: "1px solid rgba(255,255,255,0.1)",
                           }}
                         >
                           {item.image && (
@@ -142,8 +141,14 @@ export default function Navigator() {
               // Fallback to Markdown
               return (
                 <div
-                  className="markdown-body"
-                  style={{ fontSize: "1.1rem", lineHeight: "1.6" }}
+                  className="glass-panel"
+                  style={{ 
+                    fontSize: "1.1rem", 
+                    lineHeight: "1.6", 
+                    padding: "20px", 
+                    borderRadius: "16px",
+                    background: "rgba(0,0,0,0.2)" 
+                  }}
                 >
                   <ReactMarkdown
                     components={{
@@ -223,8 +228,19 @@ export default function Navigator() {
                 href={result.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-card"
-                style={{ marginTop: "0.5rem" }}
+                className="glass-panel"
+                style={{ 
+                  marginTop: "0.5rem",
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "15px",
+                  borderRadius: "12px",
+                  textDecoration: "none",
+                  color: "inherit",
+                  transition: "transform 0.2s"
+                }}
+                onMouseOver={(e) => e.currentTarget.style.transform = "translateY(-2px)"}
+                onMouseOut={(e) => e.currentTarget.style.transform = "translateY(0)"}
               >
                 <div
                   style={{ display: "flex", alignItems: "center", gap: "10px" }}
