@@ -1,53 +1,8 @@
-import json
-import os
-from difflib import get_close_matches
-
-DATA_DIR = os.path.join(os.path.dirname(__file__), "../data")
-
-def load_navigation():
-    try:
-        with open(os.path.join(DATA_DIR, "navigation.json"), "r") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return []
-
-def load_electives():
-    try:
-        with open(os.path.join(DATA_DIR, "electives.json"), "r") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return []
-
 from services.llm_service import get_embedding
-import math
-
-# Cache for embeddings
-TASK_EMBEDDINGS = []
-
-def cosine_similarity(v1, v2):
-    "Compute cosine similarity between two vectors."
-    if not v1 or not v2: return 0.0
-    dot_product = sum(a*b for a,b in zip(v1, v2))
-    norm_v1 = math.sqrt(sum(a*a for a in v1))
-    norm_v2 = math.sqrt(sum(b*b for b in v2))
-    return dot_product / (norm_v1 * norm_v2) if norm_v1 > 0 and norm_v2 > 0 else 0.0
-
-def initialize_embeddings():
-    global TASK_EMBEDDINGS
-    if TASK_EMBEDDINGS: return # Already initialized
-    
-    print("Initializing semantic search embeddings...")
-    nav_data = load_navigation()
-    for item in nav_data:
-        # Create a rich text representation for embedding
-        text = f"{item['task']}: {item['description']}"
-        embedding = get_embedding(text)
-        if embedding:
-            TASK_EMBEDDINGS.append({
-                "item": item,
-                "embedding": embedding
-            })
-    print(f"Initialized {len(TASK_EMBEDDINGS)} embeddings.")
+from .loader import load_navigation
+from .embeddings import initialize_embeddings, TASK_EMBEDDINGS
+from .math_utils import cosine_similarity
+import string
 
 def find_best_task(query):
     """
@@ -68,7 +23,6 @@ def find_best_task(query):
                 semantic_matches.append((score * 10, entry['item'])) # Scale score to match keyword scale
     
     # 2. Keyword Search (Legacy)
-    import string
     query_lower = query.lower().translate(str.maketrans('', '', string.punctuation))
     query_words = set(query_lower.split())
     
@@ -111,24 +65,3 @@ def find_best_task(query):
     final_matches.sort(key=lambda x: x['score'], reverse=True)
     
     return [m['item'] for m in final_matches[:3]]
-
-def find_electives(interests):
-    """
-    Finds electives based on interests.
-    """
-    electives = load_electives()
-    interests_lower = interests.lower()
-    matches = []
-    
-    for course in electives:
-        score = 0
-        if any(tag.lower() in interests_lower for tag in course['tags']):
-            score += 5
-        if interests_lower in course['description'].lower():
-            score += 2
-            
-        if score > 0:
-            matches.append((score, course))
-            
-    matches.sort(key=lambda x: x[0], reverse=True)
-    return [m[1] for m in matches[:5]]
