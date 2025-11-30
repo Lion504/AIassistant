@@ -1,0 +1,7 @@
+[
+  {
+    "username": "testuser",
+    "password": "scrypt:32768:8:1$hK9KYfSGv9ajhHcv$08f3d7258070c9f8db0a4260a4606d8c237ac5013bac4015a478ae26b3a9f45a5067a8b2bd8b25c526968d1894d3071438d0217b5836830a92da284af682c73a",
+    "role": "student"
+  }
+]

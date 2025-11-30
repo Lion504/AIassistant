@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-const Login = ({ onLogin, onSwitchToSignup }) => {
+const Signup = ({ onSignup, onSwitchToLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [role, setRole] = useState('student');
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
@@ -10,18 +11,18 @@ const Login = ({ onLogin, onSwitchToSignup }) => {
     setError('');
     
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch('http://localhost:5000/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ username, password, role })
       });
       
       const data = await response.json();
       
       if (response.ok) {
-        onLogin(data); // Pass full user data (token, role, username)
+        onSignup(username, password); // Auto-fill login or auto-login
       } else {
-        setError(data.error || 'Login failed');
+        setError(data.error || 'Registration failed');
       }
     } catch (err) {
       setError('Connection error');
@@ -37,15 +38,7 @@ const Login = ({ onLogin, onSwitchToSignup }) => {
       height: '100%', 
       textAlign: 'center' 
     }}>
-      <h1 style={{ 
-        fontSize: '3rem', 
-        marginBottom: '2rem',
-        background: 'linear-gradient(to right, #fff, #94a3b8)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent'
-      }}>
-        Welcome to OMA
-      </h1>
+      <h1 style={{ marginBottom: '2rem', color: '#fff' }}>Create Account</h1>
       
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px', width: '300px' }}>
         <input 
@@ -65,6 +58,15 @@ const Login = ({ onLogin, onSwitchToSignup }) => {
           style={{ padding: '10px', borderRadius: '5px', border: '1px solid #444', background: '#222', color: '#fff' }}
         />
         
+        <select 
+          value={role} 
+          onChange={(e) => setRole(e.target.value)}
+          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #444', background: '#222', color: '#fff' }}
+        >
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+
         {error && <p style={{ color: 'red', fontSize: '0.9rem' }}>{error}</p>}
 
         <button 
@@ -79,15 +81,15 @@ const Login = ({ onLogin, onSwitchToSignup }) => {
             fontWeight: 'bold'
           }}
         >
-          Login
+          Sign Up
         </button>
       </form>
 
       <p style={{ marginTop: '20px', color: '#aaa' }}>
-        Don't have an account? <span onClick={onSwitchToSignup} style={{ color: 'var(--primary-color)', cursor: 'pointer' }}>Sign Up</span>
+        Already have an account? <span onClick={onSwitchToLogin} style={{ color: 'var(--primary-color)', cursor: 'pointer' }}>Login</span>
       </p>
     </div>
   );
 };
 
-export default Login;
+export default Signup;

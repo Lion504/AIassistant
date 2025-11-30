@@ -1,8 +1,25 @@
 from flask import Blueprint, request, jsonify
 from services.search_service import find_best_task, find_electives
 from services.llm_service import generate_navigation_response, explain_announcement, recommend_electives
+from services.auth_service import register_user, authenticate_user
 
 api = Blueprint('api', __name__)
+
+@api.route('/auth/register', methods=['POST'])
+def register():
+    data = request.json
+    result = register_user(data.get('username'), data.get('password'), data.get('role', 'student'))
+    if "error" in result:
+        return jsonify(result), 400
+    return jsonify(result)
+
+@api.route('/auth/login', methods=['POST'])
+def login():
+    data = request.json
+    result = authenticate_user(data.get('username'), data.get('password'))
+    if "error" in result:
+        return jsonify(result), 401
+    return jsonify(result)
 
 @api.route('/navigate', methods=['POST'])
 def navigate():

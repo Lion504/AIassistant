@@ -1,30 +1,72 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigator from './components/Navigator';
 import Explainer from './components/Explainer';
 import Electives from './components/Electives';
 import Dashboard from './components/Dashboard';
 import TeacherDashboard from './components/TeacherDashboard';
 import Login from './components/Login';
+import Signup from './components/Signup';
 import './App.css';
 
 function App() {
   const [activeTab, setActiveTab] = useState('login');
   const [userRole, setUserRole] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [username, setUsername] = useState(localStorage.getItem('username'));
 
-  const handleLogin = (role) => {
-    setUserRole(role);
+  useEffect(() => {
+    // Auto-login if token exists
+    const savedToken = localStorage.getItem('token');
+    const savedRole = localStorage.getItem('role');
+    const savedUser = localStorage.getItem('username');
+    
+    if (savedToken && savedRole) {
+      setToken(savedToken);
+      setUserRole(savedRole);
+      setUsername(savedUser);
+      setActiveTab('home');
+    }
+  }, []);
+
+  const handleLogin = (userData) => {
+    setToken(userData.token);
+    setUserRole(userData.role);
+    setUsername(userData.username);
+    
+    localStorage.setItem('token', userData.token);
+    localStorage.setItem('role', userData.role);
+    localStorage.setItem('username', userData.username);
+    
     setActiveTab('home');
   };
 
   const handleLogout = () => {
+    setToken(null);
     setUserRole(null);
+    setUsername(null);
+    
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    localStorage.removeItem('username');
+    
     setActiveTab('login');
   };
 
   if (activeTab === 'login') {
     return (
       <div className="app-container" style={{ justifyContent: 'center' }}>
-        <Login onLogin={handleLogin} />
+        <Login onLogin={handleLogin} onSwitchToSignup={() => setActiveTab('signup')} />
+      </div>
+    );
+  }
+
+  if (activeTab === 'signup') {
+    return (
+      <div className="app-container" style={{ justifyContent: 'center' }}>
+        <Signup 
+          onSignup={(u, p) => handleLogin({ token: 'temp', role: 'student', username: u })} // Ideally auto-login via API
+          onSwitchToLogin={() => setActiveTab('login')} 
+        />
       </div>
     );
   }
